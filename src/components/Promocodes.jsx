@@ -1,23 +1,129 @@
-import React from 'react';
+import React from "react";
+import {
+  Gift,
+  Copy,
+  ExternalLink,
+} from "lucide-react";
 
 const Promocodes = () => {
   return (
-    <div className="p-6 pt-20 min-h-screen bg-[#020817]">
-      <h1 className="text-2xl font-bold text-green-400 mb-6">PROMO CODES</h1>
-      <div className="space-y-4">
-        <div className="bg-[#0a2e1d] border-2 border-dashed border-green-500/50 p-6 rounded-2xl text-center">
-          <p className="text-gray-400 mb-2 text-sm">Enter your code here</p>
-          <input 
-            type="text" 
-            placeholder="YONONEW2024" 
-            className="w-full bg-[#030c07] border border-green-500/30 rounded-xl p-3 text-center text-xl font-black tracking-widest text-green-400 focus:outline-none focus:border-green-500"
-          />
-          <button className="w-full mt-4 bg-green-500 text-black py-3 rounded-xl font-bold text-lg shadow-[0_0_20px_rgba(34,197,94,0.4)]">APPLY CODE</button>
-        </div>
+    <div
+      className="min-h-screen text-white pt-10 pb-8"
+      style={{
+        background:
+          "linear-gradient(to bottom,#02130c,#041f15,#02110b)",
+      }}
+    >
+      {/* HEADER */}
+      <div className="text-center px-4 mb-6">
         
-        <div className="bg-[#1b5f4c]/20 p-4 rounded-xl border border-green-500/10">
-          <p className="text-sm font-bold text-green-400">PROMO HINT:</p>
-          <p className="text-xs text-gray-400">Join our Telegram channel for daily limited promocodes!</p>
+        <div className="flex items-center justify-center gap-2">
+          <Gift size={22} className="text-pink-400" />
+
+          <h1 className="text-[20px] font-bold">
+            Daily Promo Codes
+          </h1>
+        </div>
+
+        <p className="text-[13px] text-gray-300 mt-2 leading-5">
+          Join our channel to get latest working promo
+          codes instantly
+        </p>
+      </div>
+
+      {/* CARD 1 */}
+      <div className="mx-2 mb-5 overflow-hidden rounded-t-[20px]">
+        
+        {/* TOP CURVE */}
+        <div className="h-[6px] bg-gradient-to-r from-[#0a4429] via-[#15a86a] to-[#0a4429]" />
+
+        {/* BODY */}
+        <div className="bg-[#041b14]/95 px-3 py-4 border border-[#00ff99]/10">
+          
+          {/* TITLE */}
+          <div className="flex items-center gap-2 mb-2">
+            <Gift size={15} className="text-[#00ff99]" />
+
+            <h2 className="text-[16px] font-bold">
+              Daily Promo Codes
+            </h2>
+          </div>
+
+          <p className="text-[12px] text-gray-300 mb-4">
+            Get latest working promo codes updated daily
+          </p>
+
+          {/* CODE BOX */}
+          <div className="bg-gradient-to-r from-[#103826] to-[#0c5d3f] rounded-xl px-3 py-3 flex items-center justify-between mb-4">
+            
+            <p className="text-[#92ffcb] text-[15px] font-medium">
+              JOIN & GET
+            </p>
+
+            <button className="w-8 h-8 rounded-lg bg-[#00c87a] flex items-center justify-center">
+              <Copy size={15} />
+            </button>
+          </div>
+
+          {/* BUTTON */}
+          <a
+            href="https://t.me/yourtelegram"
+            target="_blank"
+            rel="noreferrer"
+            className="w-full bg-[#00c96b] rounded-xl py-3 flex items-center justify-center gap-2 text-[16px] font-bold"
+          >
+            Join Here
+
+            <ExternalLink size={16} />
+          </a>
+        </div>
+      </div>
+
+      {/* CARD 2 */}
+      <div className="mx-2 overflow-hidden rounded-t-[20px]">
+        
+        {/* TOP CURVE */}
+        <div className="h-[6px] bg-gradient-to-r from-[#0a4429] via-[#15a86a] to-[#0a4429]" />
+
+        {/* BODY */}
+        <div className="bg-[#041b14]/95 px-3 py-4 border border-[#00ff99]/10">
+          
+          {/* TITLE */}
+          <div className="flex items-center gap-2 mb-2">
+            <Gift size={15} className="text-[#00ff99]" />
+
+            <h2 className="text-[16px] font-bold">
+              Exclusive Offers
+            </h2>
+          </div>
+
+          <p className="text-[12px] text-gray-300 mb-4">
+            Premium users ke liye special deals
+          </p>
+
+          {/* CODE BOX */}
+          <div className="bg-gradient-to-r from-[#103826] to-[#0c5d3f] rounded-xl px-3 py-3 flex items-center justify-between mb-4">
+            
+            <p className="text-[#92ffcb] text-[15px] font-medium">
+              UNLOCK NOW
+            </p>
+
+            <button className="w-8 h-8 rounded-lg bg-[#00c87a] flex items-center justify-center">
+              <Copy size={15} />
+            </button>
+          </div>
+
+          {/* BUTTON */}
+          <a
+            href="https://t.me/yourtelegram"
+            target="_blank"
+            rel="noreferrer"
+            className="w-full bg-[#00c96b] rounded-xl py-3 flex items-center justify-center gap-2 text-[16px] font-bold"
+          >
+            Join Here
+
+            <ExternalLink size={16} />
+          </a>
         </div>
       </div>
     </div>

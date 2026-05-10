@@ -68,71 +68,69 @@ const Games = () => {
 
       <div className="relative z-10 max-w-[1600px] mx-auto px-3 md:px-6 pt-5 pb-0">
 
-        {/* CATEGORY BAR - Fixed for small screens with Shimmer */}
-        <div className="w-full overflow-x-auto no-scrollbar mb-7 pb-2">
-          <div className="flex items-center justify-start md:justify-center gap-2 min-w-max px-2">
-            <div className="bg-[#1b5f4c]/60 border border-green-400/20 rounded-full p-1 flex items-center gap-2 md:gap-6 backdrop-blur-md shadow-lg relative overflow-hidden">
-              
-              {/* Shimmer Effect Overlay */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 animate-shimmer-fast"></div>
-              </div>
-
-              <button
-                onClick={() => setActiveTab("new")}
-                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  activeTab === "new"
-                    ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
-                    : "bg-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Gift className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "new" ? "text-green-900" : "text-cyan-100"}`} />
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("games")}
-                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  activeTab === "games"
-                    ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
-                    : "bg-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Gamepad2 className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "games" ? "text-green-900" : "text-cyan-100"}`} />
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("star")}
-                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  activeTab === "star"
-                    ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
-                    : "bg-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Star className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "star" ? "text-green-900" : "text-cyan-100"}`} />
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("hot")}
-                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  activeTab === "hot"
-                    ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
-                    : "bg-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Flame className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "hot" ? "text-green-900" : "text-cyan-100"}`} />
-              </button>
-
-              <button 
-                onClick={() => setActiveTab("rocket")}
-                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                  activeTab === "rocket"
-                    ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
-                    : "bg-transparent opacity-70 hover:opacity-100"
-                }`}
-              >
-                <Rocket className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "rocket" ? "text-green-900" : "text-cyan-100"}`} />
-              </button>
+        {/* CATEGORY BAR - Ultimate fix for all screen sizes */}
+        <div className="w-full mb-7 px-2">
+          <div className="bg-[#1b5f4c]/60 border border-green-400/20 rounded-full p-1 flex items-center justify-between backdrop-blur-md shadow-lg relative overflow-hidden max-w-2xl mx-auto">
+            
+            {/* Shimmer Effect Overlay */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 animate-shimmer-fast"></div>
             </div>
+
+            <button
+              onClick={() => setActiveTab("new")}
+              className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                activeTab === "new"
+                  ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
+                  : "bg-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <Gift className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "new" ? "text-green-900" : "text-cyan-100"}`} />
+            </button>
+
+            <button 
+              onClick={() => setActiveTab("games")}
+              className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                activeTab === "games"
+                  ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
+                  : "bg-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <Gamepad2 className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "games" ? "text-green-900" : "text-cyan-100"}`} />
+            </button>
+
+            <button 
+              onClick={() => setActiveTab("star")}
+              className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                activeTab === "star"
+                  ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
+                  : "bg-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <Star className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "star" ? "text-green-900" : "text-cyan-100"}`} />
+            </button>
+
+            <button 
+              onClick={() => setActiveTab("hot")}
+              className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                activeTab === "hot"
+                  ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
+                  : "bg-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <Flame className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "hot" ? "text-green-900" : "text-cyan-100"}`} />
+            </button>
+
+            <button 
+              onClick={() => setActiveTab("rocket")}
+              className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                activeTab === "rocket"
+                  ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
+                  : "bg-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              <Rocket className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === "rocket" ? "text-green-900" : "text-cyan-100"}`} />
+            </button>
           </div>
         </div>
 
