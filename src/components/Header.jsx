@@ -10,6 +10,7 @@ import {
   Plus,
   X,
 } from "lucide-react";
+import SettingsModal from "./SettingsModal";
 
 const vipData = [
   { name: "VIP0", color: "border-orange-400" },
@@ -26,8 +27,9 @@ const vipData = [
   { name: "VIP11", color: "border-amber-400" },
 ];
 
-const Header = () => {
+const Header = ({ musicEnabled, setMusicEnabled, audioEnabled, setAudioEnabled }) => {
   const [open, setOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <>
@@ -63,11 +65,21 @@ const Header = () => {
           </div>
 
           {/* SETTINGS */}
-          <button>
+          <button onClick={() => setSettingsOpen(true)}>
             <Settings className="w-6 h-6 text-green-400" />
           </button>
         </div>
       </header>
+
+      {/* SETTINGS MODAL */}
+      <SettingsModal 
+        isOpen={settingsOpen} 
+        onClose={() => setSettingsOpen(false)} 
+        musicEnabled={musicEnabled}
+        setMusicEnabled={setMusicEnabled}
+        audioEnabled={audioEnabled}
+        setAudioEnabled={setAudioEnabled}
+      />
 
       {/* POPUP */}
       {open && (

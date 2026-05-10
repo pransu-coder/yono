@@ -8,7 +8,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ setActivePage }) => {
   return (
     <footer className="relative overflow-hidden border-t border-green-400/20 bg-[#02140c]/80 backdrop-blur-md text-white pb-28 md:pb-10">
 
@@ -81,20 +81,29 @@ const Footer = () => {
             </h3>
 
             <div className="flex flex-wrap gap-3">
-
-              {[
-                "All Apps",
-                "Privacy",
-                "About Us",
-                "Contact",
-              ].map((item, i) => (
-                <button
-                  key={i}
-                  className="px-5 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md text-[15px] font-semibold hover:bg-green-500 hover:text-black transition duration-300"
-                >
-                  {item}
-                </button>
-              ))}
+              <button
+                onClick={() => setActivePage('home')}
+                className="px-5 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md text-[15px] font-semibold hover:bg-green-500 hover:text-black transition duration-300"
+              >
+                All Apps
+              </button>
+              <button
+                onClick={() => setActivePage('privacy')}
+                className="px-5 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md text-[15px] font-semibold hover:bg-green-500 hover:text-black transition duration-300"
+              >
+                Privacy
+              </button>
+              <button
+                onClick={() => setActivePage('about')}
+                className="px-5 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md text-[15px] font-semibold hover:bg-green-500 hover:text-black transition duration-300"
+              >
+                About Us
+              </button>
+              <button
+                className="px-5 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md text-[15px] font-semibold hover:bg-green-500 hover:text-black transition duration-300"
+              >
+                Contact
+              </button>
             </div>
           </div>
 

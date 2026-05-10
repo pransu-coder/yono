@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-const Games = () => {
+const Games = ({ playClick }) => {
   const [activeTab, setActiveTab] = useState("new");
 
   const games = [
@@ -63,6 +63,11 @@ const Games = () => {
     },
   ];
 
+  const handleTabChange = (tab) => {
+    playClick();
+    setActiveTab(tab);
+  };
+
   return (
     <div className="relative text-white">
 
@@ -78,7 +83,7 @@ const Games = () => {
             </div>
 
             <button
-              onClick={() => setActiveTab("new")}
+              onClick={() => handleTabChange("new")}
               className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeTab === "new"
                   ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
@@ -89,7 +94,7 @@ const Games = () => {
             </button>
 
             <button 
-              onClick={() => setActiveTab("games")}
+              onClick={() => handleTabChange("games")}
               className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeTab === "games"
                   ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
@@ -100,7 +105,7 @@ const Games = () => {
             </button>
 
             <button 
-              onClick={() => setActiveTab("star")}
+              onClick={() => handleTabChange("star")}
               className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeTab === "star"
                   ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
@@ -111,7 +116,7 @@ const Games = () => {
             </button>
 
             <button 
-              onClick={() => setActiveTab("hot")}
+              onClick={() => handleTabChange("hot")}
               className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeTab === "hot"
                   ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
@@ -122,7 +127,7 @@ const Games = () => {
             </button>
 
             <button 
-              onClick={() => setActiveTab("rocket")}
+              onClick={() => handleTabChange("rocket")}
               className={`flex-1 min-w-0 h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                 activeTab === "rocket"
                   ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-[1.02]"
@@ -211,7 +216,10 @@ const Games = () => {
                 </div>
 
                 {/* BUTTON */}
-                <button className="mt-6 w-full h-[52px] rounded-2xl bg-gradient-to-r from-[#4b5b7d] to-[#40506d] hover:scale-[1.02] transition text-[22px] font-bold shadow-[0_0_18px_rgba(255,215,0,0.15)]">
+                <button 
+                  onClick={playClick}
+                  className="mt-6 w-full h-[52px] rounded-2xl bg-gradient-to-r from-[#4b5b7d] to-[#40506d] hover:scale-[1.02] transition text-[22px] font-bold shadow-[0_0_18px_rgba(255,215,0,0.15)]"
+                >
                   Download
                 </button>
               </div>
@@ -268,7 +276,10 @@ const Games = () => {
                 </div>
 
                 {/* DOWNLOAD */}
-                <button className="absolute bottom-1 right-1 w-7 h-7 rounded-full bg-gradient-to-b from-yellow-300 to-yellow-500 flex items-center justify-center shadow-lg border-2 border-white/30">
+                <button 
+                  onClick={playClick}
+                  className="absolute bottom-1 right-1 w-7 h-7 rounded-full bg-gradient-to-b from-yellow-300 to-yellow-500 flex items-center justify-center shadow-lg border-2 border-white/30"
+                >
                   <Download className="w-3 h-3 text-green-900" />
                 </button>
               </div>
