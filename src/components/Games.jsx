@@ -7,7 +7,7 @@ import {
   Download,
   Star,
 } from "lucide-react";
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Games = () => {
   const [activeTab, setActiveTab] = useState("new");
@@ -80,7 +80,7 @@ const Games = () => {
 
               <button
                 onClick={() => setActiveTab("new")}
-                className={`min-w-[60px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   activeTab === "new"
                     ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
                     : "bg-transparent opacity-70 hover:opacity-100"
@@ -91,7 +91,7 @@ const Games = () => {
 
               <button 
                 onClick={() => setActiveTab("games")}
-                className={`min-w-[60px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   activeTab === "games"
                     ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
                     : "bg-transparent opacity-70 hover:opacity-100"
@@ -102,7 +102,7 @@ const Games = () => {
 
               <button 
                 onClick={() => setActiveTab("star")}
-                className={`min-w-[60px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   activeTab === "star"
                     ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
                     : "bg-transparent opacity-70 hover:opacity-100"
@@ -113,7 +113,7 @@ const Games = () => {
 
               <button 
                 onClick={() => setActiveTab("hot")}
-                className={`min-w-[60px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   activeTab === "hot"
                     ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
                     : "bg-transparent opacity-70 hover:opacity-100"
@@ -124,7 +124,7 @@ const Games = () => {
 
               <button 
                 onClick={() => setActiveTab("rocket")}
-                className={`min-w-[60px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                className={`min-w-[70px] md:min-w-[160px] h-9 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   activeTab === "rocket"
                     ? "bg-gradient-to-b from-green-300 to-green-500 shadow-[0_0_15px_rgba(34,197,94,0.6)] scale-105"
                     : "bg-transparent opacity-70 hover:opacity-100"
@@ -157,7 +157,7 @@ const Games = () => {
               <div className="absolute -top-1 -left-1 z-30 pointer-events-none">
                 {game.tag === "NEW" ? (
                   <div className="w-12 h-12">
-                    <DotLottiePlayer
+                    <DotLottieReact
                       src="/New Product.json"
                       autoplay
                       loop
@@ -166,7 +166,7 @@ const Games = () => {
                   </div>
                 ) : (
                   <div className="w-12 h-12">
-                    <DotLottiePlayer
+                    <DotLottieReact
                       src="/Hot Deals Corner Label.json"
                       autoplay
                       loop
@@ -239,7 +239,7 @@ const Games = () => {
               <div className="absolute -top-1 -left-1 z-30 pointer-events-none">
                 {game.tag === "NEW" ? (
                   <div className="w-12 h-12">
-                    <DotLottiePlayer
+                    <DotLottieReact
                       src="/New Product.json"
                       autoplay
                       loop
@@ -248,7 +248,7 @@ const Games = () => {
                   </div>
                 ) : (
                   <div className="w-12 h-12">
-                    <DotLottiePlayer
+                    <DotLottieReact
                       src="/Hot Deals Corner Label.json"
                       autoplay
                       loop

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
-import { DotLottiePlayer } from '@dotlottie/react-player';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const BottomNav = ({ setActivePage, activePage }) => {
   return (
@@ -18,7 +18,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
             className={`flex flex-col items-center justify-center flex-1 group transition-all ${activePage === 'bank' ? 'scale-110' : ''}`}
           >
             <div className={`w-11 h-11 flex items-center justify-center rounded-2xl ${activePage === 'bank' ? 'bg-green-500/20' : 'group-hover:bg-green-500/10'} transition-all duration-300`}>
-              <DotLottiePlayer
+              <DotLottieReact
                 src="/Home.json"
                 autoplay
                 loop
@@ -34,7 +34,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
             className={`flex flex-col items-center justify-center flex-1 group transition-all ${activePage === 'bonus' ? 'scale-110' : ''}`}
           >
             <div className={`w-11 h-11 flex items-center justify-center rounded-2xl ${activePage === 'bonus' ? 'bg-green-500/20' : 'group-hover:bg-green-500/10'} transition-all duration-300`}>
-              <DotLottiePlayer
+              <DotLottieReact
                 src="/Gift Box.json"
                 autoplay
                 loop
@@ -61,7 +61,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
             className={`flex flex-col items-center justify-center flex-1 group transition-all ${activePage === 'promo' ? 'scale-110' : ''}`}
           >
             <div className={`w-11 h-11 flex items-center justify-center rounded-2xl ${activePage === 'promo' ? 'bg-green-500/20' : 'group-hover:bg-green-500/10'} transition-all duration-300`}>
-              <DotLottiePlayer
+              <DotLottieReact
                 src="/Woman telling about 777  jackpot winner.json"
                 autoplay
                 loop
@@ -77,7 +77,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
             className={`flex flex-col items-center justify-center flex-1 group transition-all ${activePage === 'money' ? 'scale-110' : ''}`}
           >
             <div className={`w-11 h-11 flex items-center justify-center rounded-2xl ${activePage === 'money' ? 'bg-green-500/20' : 'group-hover:bg-green-500/10'} transition-all duration-300`}>
-              <DotLottiePlayer
+              <DotLottieReact
                 src="/Money Bag.json"
                 autoplay
                 loop
