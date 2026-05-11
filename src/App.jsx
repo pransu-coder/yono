@@ -27,13 +27,13 @@ function App() {
     }
   };
 
-  // Background Music Logic
+  // Main Audio Control Effect
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
     const tryPlay = () => {
-      if (musicEnabled) {
+      if (musicEnabled && document.visibilityState === 'visible') {
         audio.muted = false;
         audio.volume = 0.4;
         audio.play().catch(() => {});
@@ -44,8 +44,18 @@ function App() {
 
     tryPlay();
 
+    // Handle Tab Switch / Minimize
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        audio.pause();
+      } else if (musicEnabled) {
+        audio.play().catch(() => {});
+      }
+    };
+
+    // Global listener to catch FIRST interaction anywhere to start music
     const startOnInteraction = () => {
-      if (musicEnabled && audio.paused) {
+      if (musicEnabled && audio.paused && document.visibilityState === 'visible') {
         audio.play().catch(() => {});
       }
     };
@@ -53,11 +63,13 @@ function App() {
     window.addEventListener('mousedown', startOnInteraction);
     window.addEventListener('touchstart', startOnInteraction);
     window.addEventListener('keydown', startOnInteraction);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('mousedown', startOnInteraction);
       window.removeEventListener('touchstart', startOnInteraction);
       window.removeEventListener('keydown', startOnInteraction);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [musicEnabled]);
 
