@@ -8,7 +8,25 @@ const BottomNav = ({ setActivePage, activePage }) => {
       <div className="max-w-[450px] mx-auto relative pointer-events-auto px-4">
         
         {/* Glassmorphism Background Container */}
-        <div className="absolute inset-0 bottom-2 mx-4 bg-[#051a0f]/90 backdrop-blur-md rounded-[28px] border border-green-500/30 shadow-[0_10px_40px_rgba(0,0,0,0.8)] h-[70px]"></div>
+        <div className="absolute inset-0 bottom-2 mx-4 bg-[#051a0f]/90 backdrop-blur-md rounded-[28px] border border-green-500/30 shadow-[0_10px_40px_rgba(0,0,0,0.8)] h-[70px] overflow-hidden">
+          {/* Dense Sparkles for Bottom Nav */}
+          <div className="absolute inset-0 pointer-events-none opacity-50">
+            {[...Array(30)].map((_, i) => (
+              <div 
+                key={i}
+                className="absolute bg-white rounded-full animate-sparkle"
+                style={{
+                  width: Math.random() * 2.5 + 'px',
+                  height: Math.random() * 2.5 + 'px',
+                  top: Math.random() * 100 + '%',
+                  left: Math.random() * 100 + '%',
+                  animationDelay: Math.random() * 5 + 's',
+                  animationDuration: (Math.random() * 2 + 1) + 's'
+                }}
+              />
+            ))}
+          </div>
+        </div>
         
         <div className="relative flex justify-between items-center h-[70px] px-2">
           
@@ -25,7 +43,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
                 className="w-9 h-9"
               />
             </div>
-            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'bank' ? 'text-green-400' : 'text-green-400/60'} group-hover:text-green-400 transition-colors`}>Bank</span>
+            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'bank' ? 'text-white' : 'text-white/60'} group-hover:text-white transition-colors`}>Bank</span>
           </button>
           
           {/* Bonus */}
@@ -41,7 +59,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
                 className="w-9 h-9"
               />
             </div>
-            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'bonus' ? 'text-green-400' : 'text-green-400/60'} group-hover:text-green-400 transition-colors`}>Bonus</span>
+            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'bonus' ? 'text-white' : 'text-white/60'} group-hover:text-white transition-colors`}>Bonus</span>
           </button>
 
           {/* Center Game Icon */}
@@ -52,7 +70,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
             >
               <img src="/main.png" alt="Game" className="w-full h-full object-contain" />
             </button>
-            <span className="mt-1 text-[10px] font-bold uppercase tracking-tight text-green-400">Game</span>
+            <span className="mt-1 text-[10px] font-bold uppercase tracking-tight text-white">Game</span>
           </div>
 
           {/* Promocodes */}
@@ -68,7 +86,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
                 className="w-10 h-10 scale-110"
               />
             </div>
-            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'promo' ? 'text-green-400' : 'text-green-400/60'} group-hover:text-green-400 transition-colors`}>Promo</span>
+            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'promo' ? 'text-white' : 'text-white/60'} group-hover:text-white transition-colors`}>Promo</span>
           </button>
           
           {/* Money */}
@@ -84,7 +102,7 @@ const BottomNav = ({ setActivePage, activePage }) => {
                 className="w-9 h-9"
               />
             </div>
-            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'money' ? 'text-green-400' : 'text-green-400/60'} group-hover:text-green-400 transition-colors`}>Money</span>
+            <span className={`text-[10px] font-bold uppercase tracking-tight ${activePage === 'money' ? 'text-white' : 'text-white/60'} group-hover:text-white transition-colors`}>Money</span>
           </button>
 
         </div>
